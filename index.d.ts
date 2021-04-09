@@ -6,28 +6,28 @@
 // Definitions: https://github.com/davesag/swagger-routes-express
 // TypeScript Version: 3.9.x
 declare module 'swagger-routes-express' {
-  import {Handler, Router} from "express";
+  import { Handler, Router } from "express";
 
   interface Controllers {
-      [key: string]: Handler;
+    [key: string]: Handler;
   }
 
   interface ConnectorOptions {
-      security?: {
-          [key: string]: Handler;
-      };
+    security?: {
+      [key: string]: Handler;
+    };
 
-      middleware?: {
-          [key: string]: Handler;
-      };
+    middleware?: {
+      [key: string]: Handler;
+    };
 
-      onCreateRoute?: (method: string, descriptor: any[]) => void;
+    onCreateRoute?: (method: string, descriptor: any[], operationId: string) => void;
 
-      apiSeparator?: string;
-      notImplemented?: Handler;
-      notFound?: Handler;
-      rootTag?: string;
-      variables?: object;
+    apiSeparator?: string;
+    notImplemented?: Handler;
+    notFound?: Handler;
+    rootTag?: string;
+    variables?: object;
   }
 
   interface SummariseOptions {

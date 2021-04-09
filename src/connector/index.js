@@ -42,7 +42,7 @@ const connector = (api, apiDefinition, options = {}) => {
       descriptor.push(...middleware, controller)
 
       app[method](...descriptor)
-      if (typeof onCreateRoute === 'function') onCreateRoute(method, descriptor)
+      if (typeof onCreateRoute === 'function') onCreateRoute(method, descriptor, operationId)
     })
   }
 }
